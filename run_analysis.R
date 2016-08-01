@@ -6,19 +6,17 @@ run_analysis <- function() {
   
 #  reading test and training files
 #
-setwd("C:/coursera/GettingAndCleaningData/getdata%2Fprojectfiles%2FUCI HAR Dataset/UCI HAR Dataset/test")
-subjectTest <- read.table("subject_test.txt", header = FALSE)
-labelsTest <- read.table("y_test.txt", header = FALSE)
-testSet <- read.table("X_test.txt", header = FALSE)
+dir<-getwd()
+subjectTest <- read.table(paste(dir,"/getdata%2Fprojectfiles%2FUCI HAR Dataset/UCI HAR Dataset/test/subject_test.txt",sep=""), header = FALSE)
+labelsTest <- read.table(paste(dir,"/getdata%2Fprojectfiles%2FUCI HAR Dataset/UCI HAR Dataset/test/y_test.txt",sep=""), header = FALSE)
+testSet <- read.table(paste(dir,"/getdata%2Fprojectfiles%2FUCI HAR Dataset/UCI HAR Dataset/test/X_test.txt",sep=""), header = FALSE)
 
-setwd("C:/coursera/GettingAndCleaningData/getdata%2Fprojectfiles%2FUCI HAR Dataset/UCI HAR Dataset/train")
-subjectTrain <- read.table("subject_train.txt", header = FALSE)
-labelsTrain <- read.table("y_train.txt", header = FALSE)
-trainSet <- read.table("X_train.txt", header = FALSE)
+subjectTrain <- read.table(paste(dir,"/getdata%2Fprojectfiles%2FUCI HAR Dataset/UCI HAR Dataset/train/subject_train.txt",sep=""), header = FALSE)
+labelsTrain <- read.table(paste(dir,"/getdata%2Fprojectfiles%2FUCI HAR Dataset/UCI HAR Dataset/train/y_train.txt",sep=""), header = FALSE)
+trainSet <- read.table(paste(dir,"/getdata%2Fprojectfiles%2FUCI HAR Dataset/UCI HAR Dataset/train/X_train.txt",sep=""), header = FALSE)
 
-setwd("C:/coursera/GettingAndCleaningData/getdata%2Fprojectfiles%2FUCI HAR Dataset/UCI HAR Dataset/")
-features<-read.table("features.txt", header = FALSE)
-activityLabels<-read.table("activity_labels.txt", header = FALSE)
+features<-read.table(paste(dir,"/getdata%2Fprojectfiles%2FUCI HAR Dataset/UCI HAR Dataset/features.txt",sep=""), header = FALSE)
+activityLabels<-read.table(paste(dir,"/getdata%2Fprojectfiles%2FUCI HAR Dataset/UCI HAR Dataset/activity_labels.txt",sep=""), header = FALSE)
 
 #  merging train and test files
 #
