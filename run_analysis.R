@@ -49,6 +49,7 @@ summarisedSet<-plyr::mutate(finalSet,Subject=subjectSet$V1)
 summarisedSet<-ddply(summarisedSet, c("Activity","Subject"), function(x) colMeans(x[columns]))
 # Tidy data set with the average of each variable for each activity and each subject
 summarisedSet
+write.table(summarisedSet,file= "SummaryData.txt", row.name=FALSE)
 
 }
 
